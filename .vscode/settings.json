@@ -1,0 +1,7 @@
+{
+    "restructuredtext.confPath": "",
+    "cmake.configureArgs": [
+        "-DBOARD=stm32_min_dev_blue",
+        "-DNO_BUILD_TYPE_WARNING=TRUE",
+    ],
+}
