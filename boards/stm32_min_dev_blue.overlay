@@ -1,0 +1,39 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
+
+/ {
+
+	chosen {
+		zephyr,canbus = &can1;
+	};
+};
+
+&can1 {
+	pinctrl-0 = <&can_rx_remap1_pb8 &can_tx_remap1_pb9>;
+	pinctrl-names = "default";
+	bus-speed = <500000>;
+	status = "okay";
+
+};
+
+/*/ {
+
+	chosen {
+		zephyr,ieee802154 = &ieee802154;
+		zephyr,entropy = &fake_rng;
+	};
+
+	ieee802154: ieee802154 {
+		compatible = "nordic,nrf-ieee802154";
+		status = "disabled";
+	};	
+
+	fake_rng: fake_rng {
+		status = "okay";
+		compatible = "hid,fake-rng";
+	};
+};
+
+&ieee802154 {
+	status = "okay";
+};*/
